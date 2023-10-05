@@ -5,6 +5,8 @@ from binance import Client
 import pandas as pd
 import matplotlib.pyplot as plt
 
+# Set up the api keys from Binance
+
 client = Client(api_key, api_secret)
 
 # Getting data:
@@ -12,8 +14,6 @@ client = Client(api_key, api_secret)
 data = client.get_historical_klines("BTCUSDT", Client.KLINE_INTERVAL_1DAY, "21 Feb, 2022", "20 Feb, 2023")
 # data = client.get_historical_klines("ETHBUSD", Client.KLINE_INTERVAL_1DAY, "21 Feb, 2022")
 # data = client.get_historical_klines("BTCETH", Client.KLINE_INTERVAL_1DAY, "1 day ago UTC") # up to now
-
-data = client.get_historical_klines("BTCUSDT", Client.KLINE_INTERVAL_1DAY, "1 Jan, 2021", "31 Dec, 2021")
 
 # Organizing data:
 
