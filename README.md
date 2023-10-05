@@ -1,3 +1,1 @@
-# Algorithmic_Trading
-
-# Collection of TECHNICAL INDICATORS for algorithmic trading startegies on Python
+# Collection of TECHNICAL INDICATORS for algorithmic trading startegies on Python.
