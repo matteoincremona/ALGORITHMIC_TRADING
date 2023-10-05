@@ -30,7 +30,7 @@ cf.go_offline() # will make cufflinks offline
 cf.set_config_file(offline = False, world_readable = True)
 frame.price.iplot(kind = "line", color = "black", theme = "white", title = "Title", xTitle = "xTitle", yTitle = "yTitle")
 
-# Display TWO one variable in the same graph
+# Display TWO one variables in the same graph
 
 frame.price # data I want to display
 frame.SMA200 # data I want to display
