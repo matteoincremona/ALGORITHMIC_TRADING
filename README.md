@@ -1,3 +1,3 @@
 # Algorithmic_Trading
 
-# Collection of TECHNICAL INDICATORS for algorithmin trading startegies
+# Collection of TECHNICAL INDICATORS for algorithmic trading startegies
