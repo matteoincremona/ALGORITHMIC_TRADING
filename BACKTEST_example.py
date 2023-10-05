@@ -40,7 +40,7 @@ frame = frame.astype(float)
 
 # ------------- STRATEGY -------------
 # OPEN LONG --> if EMA5 > EMA 10 and EMA5 > EMA20
-# CLOSE LONGE if EMA5 < EMA10 or EMA5 < EMA20
+# CLOSE LONG --> if EMA5 < EMA10 or EMA5 < EMA20
 
 for i in range(0, len(frame)):
     
