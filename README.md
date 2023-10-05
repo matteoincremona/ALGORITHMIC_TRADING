@@ -1,1 +1,1 @@
-# Collection of TECHNICAL INDICATORS for algorithmic trading startegies on Python.
+# Collection of TECHNICAL INDICATORS for implementing algorithmic trading strategies on Python.
