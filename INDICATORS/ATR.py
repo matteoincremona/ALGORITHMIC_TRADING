@@ -4,7 +4,7 @@
 #    tr1 = abs(High - Close.shift())
 #    tr2 = abs(Low - Close.shift())
 #    tr = [tr0, tr1, tr2].max(axis = 1)
-#    wwma = values.ewm(alpha = 1 / n, adjust = False).mean()
-#    atr = wwma(tr, n)
+#    ema = values.ewm(span = n, adjust = False).mean()
+#    atr = ema(tr, n)
 #  
 #    return atr
