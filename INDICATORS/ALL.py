@@ -35,39 +35,39 @@ def RSI(array, period):
     return rsi
 
 def MACD(array, slow_n, fast_n):
-  """MOVING AVERAGE CONVERGENCE DIVERGENCE
+    """MOVING AVERAGE CONVERGENCE DIVERGENCE
   
-  Calculate the Moving Average Convergence Divergence (MACD).
+    Calculate the Moving Average Convergence Divergence (MACD).
 
-  Args:
-  - array (pandas.Series): The list of the Close prices of the financial instrument.
-  - slow_n (int): The value of the period for the calculation of the slow moving average (default = 26).
-  - fast_n (int): The value of the period for the calculation of the fast moving average (default = 12).
+    Args:
+    - array (pandas.Series): The list of the Close prices of the financial instrument.
+    - slow_n (int): The value of the period for the calculation of the slow moving average (default = 26).
+    - fast_n (int): The value of the period for the calculation of the fast moving average (default = 12).
   
-  It returns (pandas.Series) the values of the MACD calculated based on the prices and periods given.
-  """
-  slow = array.ewm(span = slow_n, adjust = False).mean()
-  fast = array.ewm(span = fast_n, adjust = False).mean()
-  macd = fast - slow
+    It returns (pandas.Series) the values of the MACD calculated based on the prices and periods given.
+    """
+    slow = array.ewm(span = slow_n, adjust = False).mean()
+    fast = array.ewm(span = fast_n, adjust = False).mean()
+    macd = fast - slow
   
-  return macd
+    return macd
 
 # We can also calculate a signal for the MACD, that is a moving average based on the MACD values.
 
 def MACDsignal(macd_values, period):
-  """MOVING AVERAGE CONVERGENCE DIVERGENCE SIGNAL
+    """MOVING AVERAGE CONVERGENCE DIVERGENCE SIGNAL
 
-  Calculate a moving average based on the MACD values and a given period.
+    Calculate a moving average based on the MACD values and a given period.
 
-  Args:
-  - macd_values (pandas.Series): The values of the MACD of the financial instrument. (see function called "MACD").
-  - period (int): The value of the period for the calculation of the moving average (default = 9).
+    Args:
+    - macd_values (pandas.Series): The values of the MACD of the financial instrument. (see function called "MACD").
+    - period (int): The value of the period for the calculation of the moving average (default = 9).
   
-  It returns (pandas.Series) the values of the moving average based on the MACD values and the given period.
-  """
-  sig = macd_values.ewm(span = period, adjust = False).mean()
+    It returns (pandas.Series) the values of the moving average based on the MACD values and the given period.
+    """
+    sig = macd_values.ewm(span = period, adjust = False).mean()
 
-  return sig
+    return sig
 
 def EMA(array, period):
     """ESPONENTIAL MOVING AVERAGE or ESPONENTIAL WEIGHTED MOVING AVERAGE
