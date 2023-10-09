@@ -3,11 +3,14 @@ def SMA(array, period):
     
     Calculate the Single Moving Average (SMA) of given prices.
 
-    Args:
-    - array (pandas.Series): The list of the Close prices of the financial instrument.
-    - period (int): The period to use for the SMA calculation.
+    Parameters:
+    ---
+    - `array` (pandas.Series): The list of the Close prices of the financial instrument.
+    - `period` (int): The period to use for the SMA calculation.
     
-    It returns (pandas.Series) the values of the SMA calculated based on the prices and the period given.
+    Return:
+    ---
+    - The values (pandas.Series) the values of the SMA calculated based on the prices and the period given.
     """
     
     return array.rolling(period).mean()
@@ -17,11 +20,14 @@ def RSI(array, period):
     
     Calculate the Relative Strenght Index (RSI).
     
-    Args:
-    - array (pandas.Series): The list of the Close prices of the financial instrument.
-    - period (int): The period to use for the RSI (default = 14).
+    Parameters:
+    ---
+    - `array` (pandas.Series): The list of the Close prices of the financial instrument.
+    - `period` (int): The period to use for the RSI (default = 14).
     
-    It returns (pandas.Series) the values of the RSI calculated based on the prices and the period given.
+    Return:
+    ---
+    - The values (pandas.Series) the values of the RSI calculated based on the prices and the period given.
     """
   
     var = array.diff()
@@ -39,12 +45,15 @@ def MACD(array, slow_n, fast_n):
   
     Calculate the Moving Average Convergence Divergence (MACD).
 
-    Args:
-    - array (pandas.Series): The list of the Close prices of the financial instrument.
-    - slow_n (int): The value of the period for the calculation of the slow moving average (default = 26).
-    - fast_n (int): The value of the period for the calculation of the fast moving average (default = 12).
-  
-    It returns (pandas.Series) the values of the MACD calculated based on the prices and periods given.
+    Parameters:
+    ---
+    - `array` (pandas.Series): The list of the Close prices of the financial instrument.
+    - `slow_n` (int): The value of the period for the calculation of the slow moving average (default = 26).
+    - `fast_n` (int): The value of the period for the calculation of the fast moving average (default = 12).
+    
+    Return:
+    ---
+    - The values (pandas.Series) the values of the MACD calculated based on the prices and periods given.
     """
     slow = array.ewm(span = slow_n, adjust = False).mean()
     fast = array.ewm(span = fast_n, adjust = False).mean()
@@ -59,11 +68,14 @@ def MACDsignal(macd_values, period):
 
     Calculate a moving average based on the MACD values and a given period.
 
-    Args:
-    - macd_values (pandas.Series): The values of the MACD of the financial instrument. (see function called "MACD").
-    - period (int): The value of the period for the calculation of the moving average (default = 9).
-  
-    It returns (pandas.Series) the values of the moving average based on the MACD values and the given period.
+    Parameters:
+    ---
+    - `macd_values` (pandas.Series): The values of the MACD of the financial instrument. (see function called "MACD").
+    - `period` (int): The value of the period for the calculation of the moving average (default = 9).
+    
+    Return:
+    ---
+    - The values (pandas.Series) the values of the moving average based on the MACD values and the given period.
     """
     sig = macd_values.ewm(span = period, adjust = False).mean()
 
@@ -74,11 +86,14 @@ def EMA(array, period):
     
     Calculate the Esponential Moving Average (EMA), also called Esponential Weighted Moving Average (EWMA).
 
-    Args:
-    - array (pandas.Series): The list of the Close prices of the financial instrument.
-    - period (int): The period to use for the EMA calculation.
+    Parameters:
+    ---
+    - `array` (pandas.Series): The list of the Close prices of the financial instrument.
+    - `period` (int): The period to use for the EMA calculation.
     
-    It returns (pandas.Series) the values of the EMA calculated based on the prices and the period given.
+    Return:
+    ---
+    - The values (pandas.Series) the values of the EMA calculated based on the prices and the period given.
     """
     res = array.ewm(span = period, adjust = False).mean()
     
@@ -91,12 +106,15 @@ def BBL(array, period, k):
     
     Calculate the Lower Bollinger Band of given prices.
 
-    Args:
-    - array (pandas.Series): The list of the Close prices of the financial instrument.
-    - period (int): The period to use for the BB calculation (default = 20).
-    - k (int): The standard deviation (default = 2).
+    Parameters:
+    ---
+    - `array` (pandas.Series): The list of the Close prices of the financial instrument.
+    - `period` (int): The period to use for the BB calculation (default = 20).
+    - `k` (int): The standard deviation (default = 2).
     
-    It returns (pandas.Series) the values of the Lower BB calculated based on prices, period and sd given.
+    Return:
+    ---
+    - The values (pandas.Series) the values of the Lower BB calculated based on prices, period and sd given.
     """
     
     BBlow = array.rolling(period).mean() - k * array.rolling(period).std()
@@ -110,12 +128,15 @@ def BBM(array, period, k):
     
     Calculate the Mid Bollinger Band (mean of the Upper and Lower BBs) of given prices.
 
-    Args:
-    - array (pandas.Series): The list of the Close prices of the financial instrument.
-    - period (int): The period to use for the BB calculation (default = 20).
-    - k (int): The standard deviation (default = 2).
+    Parameters:
+    ---
+    - `array` (pandas.Series): The list of the Close prices of the financial instrument.
+    - `period` (int): The period to use for the BB calculation (default = 20).
+    - `k` (int): The standard deviation (default = 2).
     
-    It returns (pandas.Series) the values of the Mid BB calculated based on prices, period and sd given.
+    Return:
+    ---
+    - The values (pandas.Series) the values of the Mid BB calculated based on prices, period and sd given.
     """
     
     BBup = array.rolling(period).mean() + k * array.rolling(period).std()
@@ -131,12 +152,15 @@ def BBU(array, period, k):
     
     Calculate the Upper Bollinger Band of given prices.
 
-    Args:
-    - array (pandas.Series): The list of the Close prices of the financial instrument.
-    - period (int): The period to use for the BB calculation (default = 20).
-    - k (int): The standard deviation (default = 2).
+    Parameters:
+    ---
+    - `array` (pandas.Series): The list of the Close prices of the financial instrument.
+    - `period` (int): The period to use for the BB calculation (default = 20).
+    - `k` (int): The standard deviation (default = 2).
     
-    It returns (pandas.Series) the values of the Upper BB calculated based on prices, period and sd given.
+    Return:
+    ---
+    - The values (pandas.Series) the values of the Upper BB calculated based on prices, period and sd given.
     """
     
     BBup = array.rolling(period).mean() + k * array.rolling(period).std()
@@ -148,13 +172,16 @@ def ATR(High, Low, Close, n):
     
     Calculate the Average True Range (ATR).
 
-    Args:
-    - High (pandas.Series): The list of the High prices of the financial instrument.
-    - Low (pandas.Series): The list of the Low prices of the financial instrument.
-    - Close (pandas.Series): The list of the Close prices of the financial instrument.
-    - n (int): The period to use for the ATR calculation (default = 14).
+    Parameters:
+    ---
+    - `High` (pandas.Series): The list of the High prices of the financial instrument.
+    - `Low` (pandas.Series): The list of the Low prices of the financial instrument.
+    - `Close` (pandas.Series): The list of the Close prices of the financial instrument.
+    - `n` (int): The period to use for the ATR calculation (default = 14).
     
-    It returns (pandas.Series) the values of the ATR calculated based on the prices and the period given.
+    Return:
+    ---
+    - The values (pandas.Series) the values of the ATR calculated based on the prices and the period given.
     """
     tr0 = abs(High - Low)
     tr1 = abs(High - Close.shift())
@@ -164,5 +191,6 @@ def ATR(High, Low, Close, n):
     atr = tr.ewm(span = n, adjust = False).mean()
   
     return atr
+
 
 
