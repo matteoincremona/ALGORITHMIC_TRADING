@@ -1,11 +1,15 @@
 def ATR(High, Low, Close, n):
-    """
+    """AVERAGE TRUE RANGE
+    
     Calculate the Average True Range (ATR).
-    :param High: The list of the High prices of the financial instrument.
-    :param Low: The list of the Low prices of the financial instrument.
-    :param Close: The list of the Close prices of the financial instrument.
-    :param n: The period to use for the ATR calculation.
-    :return: The values of the ATR calculated based on the prices and the period given.
+
+    Args:
+    - High (pandas.Series): The list of the High prices of the financial instrument.
+    - Low (pandas.Series): The list of the Low prices of the financial instrument.
+    - Close (pandas.Series): The list of the Close prices of the financial instrument.
+    - n (int): The period to use for the ATR calculation (default = 14).
+    
+    It returns (pandas.Series) the values of the ATR calculated based on the prices and the period given.
     """
     tr0 = abs(High - Low)
     tr1 = abs(High - Close.shift())
