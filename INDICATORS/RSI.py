@@ -7,8 +7,7 @@ def RSI(array, period):
     array (pandas.Series): The list of the Close prices of the financial instrument.
     period (int): The period to use for the RSI (default = 14).
     
-    Returnv(pandas.Series): The values of the RSI calculated based on the prices and the period given.
-  
+    Return(pandas.Series): The values of the RSI calculated based on the prices and the period given.
     """
   
     var = array.diff()
