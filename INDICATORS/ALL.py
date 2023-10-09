@@ -1,5 +1,6 @@
 def SMA(array, period):
     """SINGLE MOVING AVERAGE
+    ---
     
     Calculate the Single Moving Average (SMA) of given prices.
 
@@ -17,6 +18,7 @@ def SMA(array, period):
 
 def RSI(array, period):
     """RELATIVE STRENGHT INDEX
+    ---
     
     Calculate the Relative Strenght Index (RSI).
     
@@ -42,6 +44,7 @@ def RSI(array, period):
 
 def MACD(array, slow_n, fast_n):
     """MOVING AVERAGE CONVERGENCE DIVERGENCE
+    ---
   
     Calculate the Moving Average Convergence Divergence (MACD).
 
@@ -65,6 +68,7 @@ def MACD(array, slow_n, fast_n):
 
 def MACDsignal(macd_values, period):
     """MOVING AVERAGE CONVERGENCE DIVERGENCE SIGNAL
+    ---
 
     Calculate a moving average based on the MACD values and a given period.
 
@@ -83,6 +87,7 @@ def MACDsignal(macd_values, period):
 
 def EMA(array, period):
     """ESPONENTIAL MOVING AVERAGE or ESPONENTIAL WEIGHTED MOVING AVERAGE
+    ---
     
     Calculate the Esponential Moving Average (EMA), also called Esponential Weighted Moving Average (EWMA).
 
@@ -103,6 +108,7 @@ def EMA(array, period):
 
 def BBL(array, period, k):
     """LOWER BOLLINGER BAND
+    ---
     
     Calculate the Lower Bollinger Band of given prices.
 
@@ -125,6 +131,7 @@ def BBL(array, period, k):
 
 def BBM(array, period, k):
     """MID BOLLINGER BAND
+    ---
     
     Calculate the Mid Bollinger Band (mean of the Upper and Lower BBs) of given prices.
 
@@ -149,6 +156,7 @@ def BBM(array, period, k):
 
 def BBU(array, period, k):
     """UPPER BOLLINGER BAND
+    ---
     
     Calculate the Upper Bollinger Band of given prices.
 
@@ -169,6 +177,7 @@ def BBU(array, period, k):
 
 def ATR(High, Low, Close, n):
     """AVERAGE TRUE RANGE
+    ---
     
     Calculate the Average True Range (ATR).
 
