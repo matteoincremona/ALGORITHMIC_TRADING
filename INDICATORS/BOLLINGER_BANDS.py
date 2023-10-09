@@ -10,7 +10,7 @@ def BBL(array, period, k):
     - period (int): The period to use for the BB calculation (default = 20).
     - k (int): The standard deviation (default = 2).
     
-    Return (pandas.Series): The values of the Lower BB calculated based on prices, period and sd given.
+    It returns (pandas.Series) the values of the Lower BB calculated based on prices, period and sd given.
     """
     
     BBlow = array.rolling(period).mean() - k * array.rolling(period).std()
@@ -29,7 +29,7 @@ def BBM(array, period, k):
     - period (int): The period to use for the BB calculation (default = 20).
     - k (int): The standard deviation (default = 2).
     
-    Return (pandas.Series): The values of the Mid BB calculated based on prices, period and sd given.
+    It returns (pandas.Series) the values of the Mid BB calculated based on prices, period and sd given.
     """
     
     BBup = array.rolling(period).mean() + k * array.rolling(period).std()
@@ -50,7 +50,7 @@ def BBU(array, period, k):
     - period (int): The period to use for the BB calculation (default = 20).
     - k (int): The standard deviation (default = 2).
     
-    Return (pandas.Series): The values of the Upper BB calculated based on prices, period and sd given.
+    It returns (pandas.Series) the values of the Upper BB calculated based on prices, period and sd given.
     """
     
     BBup = array.rolling(period).mean() + k * array.rolling(period).std()
