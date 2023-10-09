@@ -165,3 +165,4 @@ def ATR(High, Low, Close, n):
   
     return atr
 
+
