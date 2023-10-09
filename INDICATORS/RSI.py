@@ -1,10 +1,13 @@
 def RSI(array, period):
-    """
+    """Relative Strenght Index
+    
     Calculate the Relative Strenght Index (RSI).
-
-    :param array: The list of the Close prices of the financial instrument.
-    :param period: The period to use for the RSI (default = 14).
-    :return: The values of the RSI calculated based on the prices and the period given.
+    
+    Args:
+    array (pandas.Series): The list of the Close prices of the financial instrument.
+    period (int): The period to use for the RSI (default = 14).
+    
+    Returnv(pandas.Series): The values of the RSI calculated based on the prices and the period given.
   
     """
   
