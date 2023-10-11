@@ -8,6 +8,9 @@ def RSI(array, period):
     - period (int): The period to use for the RSI (default = 14).
     
     It returns (pandas.Series) the values of the RSI calculated based on the prices and the period given.
+
+    Source: https://www.investopedia.com/terms/r/rsi.asp
+    
     """
   
     var = array.diff()
