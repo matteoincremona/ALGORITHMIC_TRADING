@@ -12,6 +12,8 @@ def SMA(array, period):
     Return:
     ---
     - The values (pandas.Series) the values of the SMA calculated based on the prices and the period given.
+    
+    Source: https://www.investopedia.com/terms/m/movingaverage.asp
     """
     
     return array.rolling(period).mean()
@@ -30,6 +32,8 @@ def RSI(array, period):
     Return:
     ---
     - The values (pandas.Series) the values of the RSI calculated based on the prices and the period given.
+    
+    Source: https://www.investopedia.com/terms/r/rsi.asp
     """
   
     var = array.diff()
@@ -57,6 +61,8 @@ def MACD(array, slow_n, fast_n):
     Return:
     ---
     - The values (pandas.Series) the values of the MACD calculated based on the prices and periods given.
+    
+    Source: https://www.investopedia.com/terms/m/macd.asp
     """
     slow = array.ewm(span = slow_n, adjust = False).mean()
     fast = array.ewm(span = fast_n, adjust = False).mean()
@@ -80,6 +86,8 @@ def MACDsignal(macd_values, period):
     Return:
     ---
     - The values (pandas.Series) the values of the moving average based on the MACD values and the given period.
+    
+    Source: https://www.investopedia.com/terms/m/macd.asp
     """
     sig = macd_values.ewm(span = period, adjust = False).mean()
 
@@ -99,6 +107,8 @@ def EMA(array, period):
     Return:
     ---
     - The values (pandas.Series) the values of the EMA calculated based on the prices and the period given.
+    
+    Source: https://www.investopedia.com/terms/e/ema.asp
     """
     res = array.ewm(span = period, adjust = False).mean()
     
@@ -121,6 +131,8 @@ def BBL(array, period, k):
     Return:
     ---
     - The values (pandas.Series) the values of the Lower BB calculated based on prices, period and sd given.
+    
+    Source: https://www.investopedia.com/terms/b/bollingerbands.asp
     """
     
     BBlow = array.rolling(period).mean() - k * array.rolling(period).std()
@@ -144,6 +156,8 @@ def BBM(array, period, k):
     Return:
     ---
     - The values (pandas.Series) the values of the Mid BB calculated based on prices, period and sd given.
+    
+    Source: https://www.investopedia.com/terms/b/bollingerbands.asp
     """
     
     BBup = array.rolling(period).mean() + k * array.rolling(period).std()
@@ -169,6 +183,8 @@ def BBU(array, period, k):
     Return:
     ---
     - The values (pandas.Series) the values of the Upper BB calculated based on prices, period and sd given.
+    
+    Source: https://www.investopedia.com/terms/b/bollingerbands.asp
     """
     
     BBup = array.rolling(period).mean() + k * array.rolling(period).std()
@@ -191,6 +207,8 @@ def ATR(High, Low, Close, n):
     Return:
     ---
     - The values (pandas.Series) the values of the ATR calculated based on the prices and the period given.
+    
+    Source: https://www.investopedia.com/terms/r/rsi.asp
     """
     tr0 = abs(High - Low)
     tr1 = abs(High - Close.shift())
@@ -199,6 +217,7 @@ def ATR(High, Low, Close, n):
     tr = db.max(axis = 1)
     atr = tr.ewm(span = n, adjust = False).mean()
   
+    return atr
     return atr
 
 
