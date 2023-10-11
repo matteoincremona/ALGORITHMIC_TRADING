@@ -15,7 +15,7 @@ def MACD(array, slow_n, fast_n):
     slow = array.ewm(span = slow_n, adjust = False).mean()
     fast = array.ewm(span = fast_n, adjust = False).mean()
     macd = fast - slow
-  
+ 
     return macd
 
 # We can also calculate a signal for the MACD, that is a moving average based on the MACD values.
