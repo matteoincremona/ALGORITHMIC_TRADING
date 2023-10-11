@@ -8,6 +8,8 @@ def EMA(array, period):
     - period (int): The period to use for the EMA calculation.
     
     It returns (pandas.Series) the values of the EMA calculated based on the prices and the period given.
+
+    Source: https://www.investopedia.com/terms/e/ema.asp
     """
     res = array.ewm(span = period, adjust = False).mean()
     
