@@ -10,6 +10,8 @@ def ATR(High, Low, Close, n):
     - n (int): The period to use for the ATR calculation (default = 14).
     
     It returns (pandas.Series) the values of the ATR calculated based on the prices and the period given.
+
+    Source: https://www.investopedia.com/terms/r/rsi.asp  
     """
     tr0 = abs(High - Low)
     tr1 = abs(High - Close.shift())
