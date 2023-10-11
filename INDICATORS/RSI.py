@@ -10,7 +10,6 @@ def RSI(array, period):
     It returns (pandas.Series) the values of the RSI calculated based on the prices and the period given.
 
     Source: https://www.investopedia.com/terms/r/rsi.asp
-    
     """
   
     var = array.diff()
