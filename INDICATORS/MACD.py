@@ -9,6 +9,8 @@ def MACD(array, slow_n, fast_n):
   - fast_n (int): The value of the period for the calculation of the fast moving average (default = 12).
   
   It returns (pandas.Series) the values of the MACD calculated based on the prices and periods given.
+  
+  Source: https://www.investopedia.com/terms/m/macd.asp
   """
   slow = array.ewm(span = slow_n, adjust = False).mean()
   fast = array.ewm(span = fast_n, adjust = False).mean()
